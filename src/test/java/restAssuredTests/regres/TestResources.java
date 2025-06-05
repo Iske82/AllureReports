@@ -85,4 +85,11 @@ public class TestResources {
         Response res = Resources.getSingleResourcesPage(23);
         res.then().statusCode(404);
     }
+    @Test(description = "Handle 404 for non-existing resource")
+    @Severity(SeverityLevel.CRITICAL)
+    @Story("GET /api/resources/23")
+    public void shouldReturnNonExistingResource2(){
+        Response res = Resources.getSingleResourcesPage(233);
+        res.then().statusCode(404);
+    }
 }
