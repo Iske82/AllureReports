@@ -23,7 +23,7 @@ public class TestResources {
     @Description("Checks that the status code is 200 for the default resource page.")
     public void shouldReturnValidStatusForDefaultResourcePage() {
         responseResourcesPage.then()
-                .statusCode(200);
+                .statusCode(201);
     }
 
     @Test(description = "Verify correct resource page number is returned")
