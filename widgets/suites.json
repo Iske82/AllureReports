@@ -1,1 +1,1 @@
-{"total":1,"items":[{"uid":"6e65ffd31a97011f7050cc03056e9a15","name":"GoRestAPITestSuite","statistic":{"failed":1,"broken":0,"skipped":0,"passed":22,"unknown":0,"total":23}}]}
+{"total":1,"items":[{"uid":"6e65ffd31a97011f7050cc03056e9a15","name":"GoRestAPITestSuite","statistic":{"failed":0,"broken":0,"skipped":0,"passed":23,"unknown":0,"total":23}}]}
