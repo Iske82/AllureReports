@@ -30,7 +30,7 @@ jobs:
     - name: Upload Allure report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
       with:
-        github_token: ${{ secrets.GITHUB_TOKEN }}
+        github_token: ${{ secrets.PAT_TOKEN }}
         publish_dir: ./target/site/allure-maven-plugin
 
     - name: Update dependency graph
