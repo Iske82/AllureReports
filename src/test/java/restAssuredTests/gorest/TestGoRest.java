@@ -52,7 +52,7 @@ public class TestGoRest {
                 .body("title", equalTo("Post title"))
                 .body("body", equalTo("Post body"))
                 .log().all()
-                .statusCode(201);
+                .statusCode(202);
     }
 
     @Test
