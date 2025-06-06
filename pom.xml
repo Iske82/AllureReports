@@ -38,6 +38,20 @@
             <artifactId>rest-assured</artifactId>
             <version>5.4.0</version>
         </dependency>
+        
+        <!-- Selenium -->
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.13.0</version>
+        </dependency>
+
+        <!-- WebDriverManager -->
+        <dependency>
+            <groupId>io.github.bonigarcia</groupId>
+            <artifactId>webdrivermanager</artifactId>
+            <version>5.8.0</version>
+        </dependency>
 
         <dependency>
             <groupId>org.yaml</groupId>
@@ -86,6 +100,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/regress.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/gorest.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/storeSelenium.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <useModulePath>false</useModulePath>
                 </configuration>
