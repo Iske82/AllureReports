@@ -32,18 +32,17 @@ public class AuthorizationPage {
     }
 
     public static Response getUserInformation() {
-        Response res = given()
+        return given()
                 .spec(reqSpec)
                 .header("Authorization", token)
                 .when()
                 .get("users/" + id)
                 .then()
                 .extract().response();
-        return res;
     }
 
     public static Response createUserUpdate(User user) {
-        Response res = given()
+        return given()
                 .spec(reqSpec)
                 .header("Authorization", token)
                 .body(user)
@@ -51,8 +50,16 @@ public class AuthorizationPage {
                 .put("users/" + id)
                 .then()
                 .extract().response();
-        return res;
-
+    }
+    public static Response createUserUpdateWithPatch(User user){
+        return given()
+                .spec(reqSpec)
+                .header("Authorization", token)
+                .body(user)
+                .when()
+                .patch("users/" + id)
+                .then()
+                .extract().response();
     }
 
     public static Response createUserPost(User user) {
@@ -69,14 +76,13 @@ public class AuthorizationPage {
     }
 
     public static Response getUserPostInformation() {
-        Response res = given()
+        return given()
                 .spec(reqSpec)
                 .header("Authorization", token)
                 .when()
                 .get("users/" + id + "/posts")
                 .then()
                 .extract().response();
-        return res;
     }
 
     public static void createUserPostComments(User user) {
@@ -105,14 +111,13 @@ public class AuthorizationPage {
     }
 
     public static Response getUserTodoInformation() {
-        Response res = given()
+        return given()
                 .spec(reqSpec)
                 .header("Authorization", token)
                 .when()
                 .get("users/" + id + "/todos")
                 .then()
                 .extract().response();
-        return res;
     }
 
     public static void deleteUser() {

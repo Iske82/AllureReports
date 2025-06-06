@@ -1,5 +1,7 @@
 package restAssuredTests.gorest;
 
+import io.qameta.allure.Description;
+import io.qameta.allure.Epic;
 import io.restassured.response.Response;
 import org.testng.Assert;
 import org.testng.annotations.AfterClass;
@@ -11,6 +13,7 @@ import restAssured.gorest.User;
 
 import static org.hamcrest.Matchers.equalTo;
 
+@Epic("GoRest API")
 public class TestGoRest {
 
     @BeforeClass
@@ -19,7 +22,7 @@ public class TestGoRest {
         AuthorizationPage.createUser(user);
     }
 
-    @Test
+    @Test(description = "Verify a correct user is returned")
     public void shouldReturnCorrectUserNameAfterCreation() {
         Response res = AuthorizationPage.getUserInformation();
         res.then()
@@ -29,7 +32,7 @@ public class TestGoRest {
         Assert.assertEquals(actualName, expectedName, "Name doesn't match expected value.");
     }
 
-    @Test
+    @Test(description = "Verify the user is successfully updated with put method")
     public void shouldUpdateUserEmailSuccessfully() {
         User user = new User();
         String expectedMail = "updated-mytestemail@testThree.com";
@@ -41,8 +44,20 @@ public class TestGoRest {
         String actualMail = res.jsonPath().getString("email");
         Assert.assertEquals(actualMail, expectedMail, "Updated email doesn't match expected value.");
     }
+    @Test(description = "Verify the user is successfully updated with patch method")
+    public void shouldUpdateUserNameSuccessfully(){
+        User user = new User();
+        String expectedName = "John Cena";
+        user.setName(expectedName);
+        user.setEmail("mytestemail@testThree.com");
+        user.setGender("male");
+        user.setStatus("active");
+        Response res = AuthorizationPage.createUserUpdateWithPatch(user);
+        String actualName = res.jsonPath().getString("name");
+        Assert.assertEquals(actualName, expectedName, "Updated name didn't match expected value.");
+    }
 
-    @Test
+    @Test(description = "Verify user post is created")
     public void shouldCreateUserPost() {
         User user = new User();
         user.setTitle("Post title");
@@ -55,7 +70,7 @@ public class TestGoRest {
                 .statusCode(201);
     }
 
-    @Test
+    @Test(description = "Verify user post information is returned")
     public void shouldReturnUserPostInformation() {
         Response res = AuthorizationPage.getUserPostInformation();
         System.out.println(res.asString());
