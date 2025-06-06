@@ -1,9 +1,9 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="GoRestAPITestSuite">
+<suite name="RegressAPITestSuite">
     <listeners>
         <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
     </listeners>
-    <test name="GoRestAPI">
+    <test name="RegressAPI">
         <classes>
             <class name="restAssuredTests.regres.TestResources"/>
             <class name="restAssuredTests.regres.TestUsersMethods"/>

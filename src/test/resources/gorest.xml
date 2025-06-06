@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="GoRestAPITestSuite">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="GoRestAPI">
+        <classes>
+            <class name="restAssuredTests.gorest.TestGoRest"/>
+        </classes>
+    </test>
+</suite>

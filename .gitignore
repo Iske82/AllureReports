@@ -9,6 +9,9 @@
 *.iws
 out/
 
+# Allure
+allure-results/
+
 # OS
 .DS_Store
 Thumbs.db
