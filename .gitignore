@@ -9,8 +9,8 @@
 *.iws
 out/
 
-# Allure
-allure-results/
+## Allure
+#allure-results/
 
 # OS
 .DS_Store
