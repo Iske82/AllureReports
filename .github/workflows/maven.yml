@@ -20,6 +20,9 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
+    - name: Clean Allure results
+      run: rm -rf target/allure-results
+
     - name: Build with Maven and run tests
       run: mvn clean test || true
       continue-on-error: true
