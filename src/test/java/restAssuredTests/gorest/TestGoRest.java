@@ -23,7 +23,7 @@ public class TestGoRest {
     public void shouldReturnCorrectUserNameAfterCreation() {
         Response res = AuthorizationPage.getUserInformation();
         res.then()
-                .statusCode(201);
+                .statusCode(200);
         String expectedName = res.jsonPath().getString("name");
         String actualName = "John";
         Assert.assertEquals(actualName, expectedName, "Name doesn't match expected value.");
@@ -52,7 +52,7 @@ public class TestGoRest {
                 .body("title", equalTo("Post title"))
                 .body("body", equalTo("Post body"))
                 .log().all()
-                .statusCode(202);
+                .statusCode(201);
     }
 
     @Test
