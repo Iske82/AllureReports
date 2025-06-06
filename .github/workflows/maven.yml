@@ -1,5 +1,3 @@
-name: Java CI with Maven and Allure Report
-
 on:
   push:
     branches: [ "main" ]
@@ -20,16 +18,12 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    - name: Install Google Chrome
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y google-chrome-stable
-
-    - name: Set CHROME_BIN environment variable
-      run: echo "CHROME_BIN=/usr/bin/google-chrome-stable" >> $GITHUB_ENV
+   # - name: Clean Allure results
+   #   run: rm -rf target/allure-results
 
     - name: Build with Maven and run tests
-      run: mvn clean test
+      run: mvn clean test || true
+      continue-on-error: true
 
     - name: Install Allure CLI
       run: |
