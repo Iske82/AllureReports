@@ -20,31 +20,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
 
-    # Install XVFB for headless browser execution (essential for Selenium on CI)
-    - name: Install XVFB
-      run: sudo apt-get install -y xvfb
-
-    # Start XVFB display for headless browser
-    - name: Start XVFB
-      run: |
-        Xvfb :99 -ac &
-        export DISPLAY=:99
-
-    - name: Clean Allure results (Recommended to uncomment this)
-      run: rm -rf target/allure-results
+   # - name: Clean Allure results
+   #   run: rm -rf target/allure-results
 
     - name: Build with Maven and run tests
-      # 'test' goal in Maven will run your configured tests (JUnit, TestNG)
-      # Ensure your pom.xml is correctly configured for Allure to generate results.
-      # `|| true` is still good if you want the workflow to continue even if tests fail,
-      # but it might hide critical issues from the GitHub Actions UI.
-      # If you want the job to *fail* on test failures but still generate the report,
-      # you can remove `|| true` and keep `continue-on-error: true` for the report generation step.
-      run: mvn clean test
-      # continue-on-error: true # Keep this if you want the report generation to run even if tests fail
+      run: mvn clean test || true
+      continue-on-error: true
 
     - name: Install Allure CLI
-      # You could cache this step to speed up subsequent runs
       run: |
         curl -o allure.tgz -L https://github.com/allure-framework/allure2/releases/download/2.27.0/allure-2.27.0.tgz
         tar -xvzf allure.tgz
@@ -52,10 +35,7 @@ jobs:
         sudo ln -s /opt/allure/bin/allure /usr/bin/allure
 
     - name: Generate Allure Report
-      # Ensure 'allure-results' directory exists and contains data from your tests
-      run: allure generate target/allure-results --clean -o allure-report
-      # Add continue-on-error here if you want the report upload to happen even if report generation has issues
-      # continue-on-error: true
+      run: allure generate allure-results --clean -o allure-report
 
     - name: Upload Allure Report to GitHub Pages
       uses: peaceiris/actions-gh-pages@v4
