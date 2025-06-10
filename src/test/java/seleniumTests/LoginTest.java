@@ -62,12 +62,12 @@ public class LoginTest {
         login.getPassword().sendKeys("testAutomation");
         login.getSubmit().click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        Boolean isValid = (Boolean) js.executeScript("return arguments[0].checkValidity();", login.getPassword());
+        Boolean isValid = (Boolean) js.executeScript("return arguments[0].checkValidity();", login.getEmail());
 
         if (!isValid) {
-            System.out.println("Password field is invalid (triggered 'Please fill out this field.').");
+            System.out.println("Email field is invalid (triggered 'Please fill out this field.').");
         } else {
-            System.out.println("Password field is valid.");
+            System.out.println("Email field is valid.");
         }
     }
 
@@ -76,12 +76,12 @@ public class LoginTest {
         login.getEmail().sendKeys("hodoy86379@pricegh");
         login.getSubmit().click();
         JavascriptExecutor js = (JavascriptExecutor) driver;
-        Boolean isValid = (Boolean) js.executeScript("return arguments[0].checkValidity();", login.getEmail());
+        Boolean isValid = (Boolean) js.executeScript("return arguments[0].checkValidity();", login.getPassword());
 
         if (!isValid) {
-            System.out.println("Email field is invalid (triggered 'Please fill out this field.').");
+            System.out.println("Password field is invalid (triggered 'Please fill out this field.').");
         } else {
-            System.out.println("Email field is valid.");
+            System.out.println("Password field is valid.");
         }
     }
 
