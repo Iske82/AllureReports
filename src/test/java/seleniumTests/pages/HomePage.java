@@ -5,6 +5,7 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import seleniumTests.helpers.Utils;
 
 
 public class HomePage {
@@ -28,22 +29,22 @@ public class HomePage {
     }
 
     public WebElement getNavBar() {
-        WebElement navBar = helpers.Utils.waitForElementPresence(driver, navBarLocator, 10);
+        WebElement navBar = Utils.waitForElementPresence(driver, navBarLocator, 10);
         return navBar;
     }
 
     public WebElement getHeader() {
-        WebElement header = helpers.Utils.waitForElementPresence(driver, headerLocator, 10);
+        WebElement header = Utils.waitForElementPresence(driver, headerLocator, 10);
         return header;
     }
 
     public WebElement getCategory() {
-        WebElement category = helpers.Utils.waitForElementPresence(driver, categoryLocator, 10);
+        WebElement category = Utils.waitForElementPresence(driver, categoryLocator, 10);
         return category;
     }
 
     public List<WebElement> getMenuItems() {
-        WebElement navList = helpers.Utils.waitForElementPresence(driver, navListLocator, 10);
+        WebElement navList = Utils.waitForElementPresence(driver, navListLocator, 10);
         return navList.findElements(menuItemLocator);
     }
 

@@ -1,9 +1,9 @@
 package seleniumTests.pages;
 
-import org.apache.hc.client5.http.impl.ChainElement;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import seleniumTests.helpers.Utils;
 
 import java.util.List;
 
@@ -24,11 +24,11 @@ public class ProductsPage {
     }
 
     private WebElement getSearchBar() {
-        return helpers.Utils.waitForElementPresence(driver, searchBarLocator, 10);
+        return Utils.waitForElementPresence(driver, searchBarLocator, 10);
     }
 
     public WebElement getSubmit() {
-        return helpers.Utils.waitForElementPresence(driver, submit, 10);
+        return Utils.waitForElementPresence(driver, submit, 10);
     }
 
     public List<WebElement> getSearchImages() {
@@ -42,6 +42,6 @@ public class ProductsPage {
     }
 
     public WebElement getCategory() {
-        return helpers.Utils.waitForElementPresence(driver, categoryLocator, 10);
+        return Utils.waitForElementPresence(driver, categoryLocator, 10);
     }
 }

@@ -1,4 +1,4 @@
-package helpers;
+package seleniumTests.helpers;
 
 import java.util.NoSuchElementException;
 
