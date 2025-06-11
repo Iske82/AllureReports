@@ -5,8 +5,8 @@
     </listeners>
     <test name="RegressAPI">
         <classes>
-            <class name="restAssuredTests.regres.TestResources"/>
-            <class name="restAssuredTests.regres.TestUsersMethods"/>
+            <class name="restAssuredTests.regres.tests.TestResources"/>
+            <class name="restAssuredTests.regres.tests.TestUsersMethods"/>
         </classes>
     </test>
 </suite>

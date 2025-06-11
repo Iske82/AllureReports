@@ -5,7 +5,7 @@
     </listeners>
     <test name="GoRestAPI">
         <classes>
-            <class name="restAssuredTests.gorest.TestGoRest"/>
+            <class name="restAssuredTests.gorest.tests.TestGoRest"/>
         </classes>
     </test>
 </suite>

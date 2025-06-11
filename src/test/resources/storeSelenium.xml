@@ -5,10 +5,10 @@
     </listeners>
     <test name="UI Store tests">
         <classes>
-            <class name="seleniumTests.LoginTest"/>
-            <class name="seleniumTests.TestChartPage"/>
-            <class name="seleniumTests.TestHomePage"/>
-            <class name="seleniumTests.TestProductsPageMethods"/>
+            <class name="seleniumTests.tests.LoginTest"/>
+            <class name="seleniumTests.tests.TestChartPage"/>
+            <class name="seleniumTests.tests.TestHomePage"/>
+            <class name="seleniumTests.tests.TestProductsPageMethods"/>
         </classes>
     </test>
 </suite>
