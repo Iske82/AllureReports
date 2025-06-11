@@ -3,6 +3,7 @@ package seleniumTests.pages;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import seleniumTests.helpers.Utils;
 
 public class CartPage {
     WebDriver driver;
@@ -13,7 +14,7 @@ public class CartPage {
     private By emptyCartLocator = By.id("empty_cart");
 
     public WebElement getEmptyCart(){
-      WebElement emptyCart = helpers.Utils.waitForElementPresence(driver, emptyCartLocator, 10);
+      WebElement emptyCart = Utils.waitForElementPresence(driver, emptyCartLocator, 10);
       return emptyCart;
     }
 }
