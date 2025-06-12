@@ -93,6 +93,7 @@
                     <suiteXmlFiles>
                         <suiteXmlFile>src/test/resources/regress.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/gorest.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/cats.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/storeSelenium.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <useModulePath>false</useModulePath>
