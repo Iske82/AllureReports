@@ -98,7 +98,6 @@
                         <suiteXmlFile>src/test/resources/responseTimes.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <useModulePath>false</useModulePath>
-
                     <!-- Parallel execution settings -->
                     <parallel>classes</parallel> <!-- or 'methods' or 'both' -->
                     <threadCount>4</threadCount>
