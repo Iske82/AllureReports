@@ -37,6 +37,19 @@ public class SWS_Response_Times {
         Assert.assertTrue(time < 10000, "response time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
     }
+    @Test(description = "Measure response time of TOC file on Test environment with link resolving")
+    @Severity(SeverityLevel.CRITICAL)
+    void testTOCFunctestWithLInkResolving() {
+        Response res = given()
+                .when()
+                .get("https://sws-internal.functest.cwc-ota.awssdu.nl/c-NDFR-BWBR0002672-14a/c-NDFR-BWBR0002672-14a-toc.html")
+                .then()
+                .extract().response();
+        long time = res.time();
+        System.out.println("Response TOC time on Test environment with link resolving is " + time + " ms");
+        Assert.assertTrue(time < 10000, "response TOC time is too slow! Expected < 10000 ms but was: " + time + " ms");
+        Allure.step("Response time: " + time + " ms");
+    }
 
     @Test(description = "Measure response time on Production environment with link resolving")
     @Severity(SeverityLevel.CRITICAL)
