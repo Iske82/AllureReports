@@ -1,0 +1,11 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Response Times of SWS Tests">
+    <listeners>
+        <listener class-name="io.qameta.allure.testng.AllureTestNg"/>
+    </listeners>
+    <test name="Measure the speed of SWS">
+        <classes>
+            <class name="restAssuredTests.responseTimes.tests.SWS_Response_Times"/>
+        </classes>
+    </test>
+</suite>

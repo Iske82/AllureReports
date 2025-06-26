@@ -95,8 +95,17 @@
                         <suiteXmlFile>src/test/resources/gorest.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/cats.xml</suiteXmlFile>
                         <suiteXmlFile>src/test/resources/storeSelenium.xml</suiteXmlFile>
+                        <suiteXmlFile>src/test/resources/responseTimes.xml</suiteXmlFile>
                     </suiteXmlFiles>
                     <useModulePath>false</useModulePath>
+
+                    <!-- Parallel execution settings -->
+                    <parallel>classes</parallel> <!-- or 'methods' or 'both' -->
+                    <threadCount>4</threadCount>
+                    <useUnlimitedThreads>false</useUnlimitedThreads>
+                    <perCoreThreadCount>false</perCoreThreadCount>
+                    <forkCount>1</forkCount>
+                    <reuseForks>true</reuseForks>
                 </configuration>
             </plugin>
 
