@@ -19,6 +19,7 @@ public class SWS_Response_Times {
                 .then()
                 .extract().response();
         long time = res.time();
+        res.then().statusCode(200);
         System.out.println("Response time on Test environment with link resolving is " + time + " ms");
         Assert.assertTrue(time < 10000, "response time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
@@ -33,6 +34,7 @@ public class SWS_Response_Times {
                 .then()
                 .extract().response();
         long time = res.time();
+        res.then().statusCode(200);
         System.out.println("Response time on Test environment without link resolving is " + time + " ms");
         Assert.assertTrue(time < 10000, "response time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
@@ -46,6 +48,7 @@ public class SWS_Response_Times {
                 .then()
                 .extract().response();
         long time = res.time();
+        res.then().statusCode(200);
         System.out.println("Response TOC time on Test environment with link resolving is " + time + " ms");
         Assert.assertTrue(time < 10000, "response TOC time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
@@ -60,6 +63,7 @@ public class SWS_Response_Times {
                 .then()
                 .extract().response();
         long time = res.time();
+        res.then().statusCode(200);
         System.out.println("Response time on Production environment with link resolving is " + time + " ms");
         Assert.assertTrue(time < 10000, "response time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
@@ -74,6 +78,7 @@ public class SWS_Response_Times {
                 .then()
                 .extract().response();
         long time = res.time();
+        System.out.println(res.statusCode());
         System.out.println("Response time on Production environment without link resolving is " + time + " ms");
         Assert.assertTrue(time < 10000, "response time is too slow! Expected < 10000 ms but was: " + time + " ms");
         Allure.step("Response time: " + time + " ms");
