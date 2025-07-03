@@ -5,7 +5,7 @@
     </listeners>
     <test name="Measure the speed of SWS">
         <classes>
-            <class name="restAssuredTests.responseTimes.tests.SWS_Response_Times"/>
+            <class name="restAssuredTests.responseTimes.tests.TestSWSResponseTimes"/>
         </classes>
     </test>
 </suite>

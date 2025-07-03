@@ -8,7 +8,7 @@ import org.testng.annotations.Test;
 import static io.restassured.RestAssured.given;
 
 @Epic("SWS API")
-public class SWS_Response_Times {
+public class TestSWSResponseTimes {
 
     @Test(description = "Measure response time on Test environment with link resolving")
     @Severity(SeverityLevel.CRITICAL)
